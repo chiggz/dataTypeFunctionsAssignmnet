@@ -1,3 +1,5 @@
+import 'dart:io';
+
 num addTwo(num num1, num num2) {
   num sum = num1 + num2;
   return sum;
@@ -13,7 +15,7 @@ void multipyTwo(num num1, num num2) {
   print('The product is : $product');
 }
 
-num divideTwo(num num1, num num2) => num1 / num2;
+num divideTwo(num num1, num num2) => num1 / num2; //Alternative way of writing
 
 /* {
   num quotient = num1 / num2;
@@ -30,14 +32,19 @@ void getFirstElement() {
 }
 
 void main() {
-  num num1 = 144;
-  num num2 = 56;
+  print('Lets have you put the first number: ');
+  num num1 = double.parse(stdin.readLineSync()!); //Parse input as a double
+  print('Lets have you put the second number: ');
+  num num2 = double.parse(stdin.readLineSync()!);
 
   print("We are dealing with functions, they are No joke");
   print('The sum is ${addTwo(num1, num2)}');
   print('The difference is : ${subtractTwo(num1, num2)}');
   multipyTwo(num1, num2);
   print('The quotient is : ${divideTwo(num1, num2)}');
-  stringLength('Great Coding');
+  print('\n');
+  print('Enter a word or sentence :'); //can also use stdout.write
+  String zed = stdin.readLineSync()!;
+  stringLength(zed);
   getFirstElement();
 }
